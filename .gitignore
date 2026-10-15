@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+node_modules/
+.next/
+.vercel/
+playwright-report/
+test-results/
+*.tsbuildinfo
+supabase/.temp/

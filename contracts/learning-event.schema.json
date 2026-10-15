@@ -1,0 +1,706 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:curriculumos:learning-event:v1",
+  "title": "Authorized server fact v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "school_id",
+    "actor_id",
+    "aggregate_id",
+    "aggregate_revision",
+    "type",
+    "schema_version",
+    "occurred_at",
+    "received_at",
+    "source",
+    "payload"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "school_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "actor_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "aggregate_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "aggregate_revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "assignment.created",
+        "lesson.completed",
+        "assessment.submitted",
+        "marking.completed",
+        "moderation.recorded",
+        "result.released",
+        "result.corrected",
+        "feedback.reviewed",
+        "intervention.recorded",
+        "curriculum.delivery_recorded",
+        "activity.draft_saved",
+        "activity.draft_cleared",
+        "assessment.attempt_created",
+        "assessment.response_saved",
+        "marking.round_created",
+        "academic.review_requested",
+        "academic.review_decided",
+        "intervention.updated"
+      ]
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "received_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "const": "server"
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "assignment.created"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "assignment_id",
+              "lesson_version_id"
+            ],
+            "properties": {
+              "assignment_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "lesson_version_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "lesson.completed"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "assignment_enrollment_id",
+              "lesson_version_id"
+            ],
+            "properties": {
+              "assignment_enrollment_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "lesson_version_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "assessment.submitted"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "attempt_id",
+              "submission_version_id",
+              "assessment_version_id"
+            ],
+            "properties": {
+              "attempt_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "submission_version_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "assessment_version_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "marking.completed"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "submission_version_id",
+              "marking_round_id"
+            ],
+            "properties": {
+              "submission_version_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "marking_round_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "moderation.recorded"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "marking_round_id",
+              "moderation_record_id"
+            ],
+            "properties": {
+              "marking_round_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "moderation_record_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "result.released"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "submission_version_id",
+              "release_id",
+              "marking_round_id"
+            ],
+            "properties": {
+              "submission_version_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "release_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "marking_round_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "result.corrected"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "previous_release_id",
+              "release_id",
+              "submission_version_id"
+            ],
+            "properties": {
+              "previous_release_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "release_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "submission_version_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "feedback.reviewed"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "release_id"
+            ],
+            "properties": {
+              "release_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "intervention.recorded"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "intervention_id",
+              "enrollment_id"
+            ],
+            "properties": {
+              "intervention_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "enrollment_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "curriculum.delivery_recorded"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "delivery_record_id",
+              "assignment_id"
+            ],
+            "properties": {
+              "delivery_record_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "assignment_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "activity.draft_saved"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "assignment_enrollment_id",
+              "item_id"
+            ],
+            "properties": {
+              "assignment_enrollment_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "item_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "activity.draft_cleared"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "assignment_enrollment_id",
+              "item_id"
+            ],
+            "properties": {
+              "assignment_enrollment_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "item_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "assessment.attempt_created"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "attempt_id",
+              "assessment_version_id"
+            ],
+            "properties": {
+              "attempt_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "assessment_version_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "assessment.response_saved"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "attempt_id",
+              "item_id"
+            ],
+            "properties": {
+              "attempt_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "item_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "marking.round_created"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "submission_version_id",
+              "marking_round_id"
+            ],
+            "properties": {
+              "submission_version_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "marking_round_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "academic.review_requested"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "review_request_id",
+              "release_id"
+            ],
+            "properties": {
+              "review_request_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "release_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "academic.review_decided"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "review_request_id",
+              "release_id"
+            ],
+            "properties": {
+              "review_request_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "release_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "intervention.updated"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "intervention_id",
+              "enrollment_id"
+            ],
+            "properties": {
+              "intervention_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "enrollment_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

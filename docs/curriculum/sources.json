@@ -1,0 +1,135 @@
+{
+  "checked_at": "2026-10-15",
+  "publication_approved": false,
+  "sources": [
+    {
+      "id": "DBE-CAPS-MATH-2011",
+      "issuer": "Department of Basic Education",
+      "title": "CAPS Mathematics Grades 10–12",
+      "url": "https://www.education.gov.za/Portals/0/CD/National%20Curriculum%20Statements%20and%20Vocational/CAPS%20FET%20_%20MATHEMATICS%20_%20GR%2010-12%20_%20Web_1133.pdf",
+      "edition": "2011",
+      "retrieved_at": "2026-10-14",
+      "sha256": "042257c73d2ffcc843393e0d6b60aeca6a5cb9f2e81d255fc4e4db2ce56d3ad5",
+      "location": {
+        "printed_page": 40,
+        "pdf_page": 45,
+        "section": "Grade 12 Term 1: Patterns, sequences, series"
+      },
+      "verification": "PDF text and rendered formula/page inspection",
+      "applicability": "Base content reference; amendments and pilot review pending",
+      "rights": "Reference only; redistribution not approved"
+    },
+    {
+      "id": "DBE-ATP-MATH-G12-2023-24",
+      "issuer": "Department of Basic Education",
+      "title": "2023/24 Annual Teaching Plans: Mathematics Grade 12",
+      "url": "https://www.education.gov.za/LinkClick.aspx?fileticket=_kS5tgxXQ0I%3d&tabid=3205&portalid=0&mid=10755",
+      "edition": "2023/24",
+      "retrieved_at": "2026-10-15",
+      "sha256": "8c7075c87a8efda82a0e1085260baa1de0a3cf24cca3f2cfa058f06f9f76dc41",
+      "location": {
+        "printed_pages": [
+          1,
+          2
+        ],
+        "pdf_pages": [
+          1,
+          2
+        ],
+        "section": "Term 1 weeks 1–4: Number patterns, sequences and series"
+      },
+      "verification": "Text retrieved; overview page rendered; subject approval pending",
+      "applicability": "2026 retention supported by S19/2025; later/provincial directives and assessment review pending",
+      "rights": "Reference only; redistribution not approved"
+    },
+    {
+      "id": "DBE-S19-2025",
+      "issuer": "Department of Basic Education",
+      "title": "Circular S19 of 2025: retention of 2023/24 ATPs for 2026 with exclusions",
+      "url": "https://www.education.gov.za/LinkClick.aspx?fileticket=fqHc5ZnT_q4%3D&mid=10757&portalid=0&tabid=3209",
+      "edition": "11 December 2025",
+      "retrieved_at": "2026-10-15",
+      "sha256": "42b042245ba1afb2045a387ab36451c239fce16ab3f70f3fd25c92568cc169e1",
+      "location": {
+        "pdf_pages": [
+          1,
+          2
+        ],
+        "section": "Paragraph 5 and listed exclusions"
+      },
+      "verification": "Official DBE link, extracted text and rendered page 2 inspected",
+      "applicability": "Grade 12 Mathematics outside listed exclusions; interpretation requires subject sign-off",
+      "rights": "Reference only"
+    },
+    {
+      "id": "DBE-ATP-INDEX",
+      "issuer": "Department of Basic Education",
+      "title": "Annual Teaching Plans official index",
+      "url": "https://www.education.gov.za/Curriculum/NationalCurriculumStatementsGradesR-12/2023ATPs.aspx",
+      "retrieved_at": "2026-10-15",
+      "sha256": null,
+      "verification": "Live page links S19/2025 and FET plan index",
+      "applicability": "Discovery source, not independent curriculum approval",
+      "rights": "Reference only"
+    }
+  ],
+  "expectations": [
+    {
+      "id": "AR-01",
+      "origin": "product-authored decomposition",
+      "source_id": "DBE-CAPS-MATH-2011",
+      "printed_page": 40,
+      "pdf_page": 45,
+      "reviewer_id": null,
+      "reviewed_at": null,
+      "status": "pending_review"
+    },
+    {
+      "id": "AR-02",
+      "origin": "product-authored decomposition",
+      "source_id": "DBE-CAPS-MATH-2011",
+      "printed_page": 40,
+      "pdf_page": 45,
+      "reviewer_id": null,
+      "reviewed_at": null,
+      "status": "pending_review"
+    },
+    {
+      "id": "AR-03",
+      "origin": "product-authored decomposition",
+      "source_id": "DBE-CAPS-MATH-2011",
+      "printed_page": 40,
+      "pdf_page": 45,
+      "reviewer_id": null,
+      "reviewed_at": null,
+      "status": "pending_review"
+    },
+    {
+      "id": "AR-04",
+      "origin": "product-authored decomposition",
+      "source_id": "DBE-CAPS-MATH-2011",
+      "printed_page": 40,
+      "pdf_page": 45,
+      "reviewer_id": null,
+      "reviewed_at": null,
+      "status": "pending_review"
+    },
+    {
+      "id": "AR-05",
+      "origin": "product-authored decomposition",
+      "source_id": "DBE-CAPS-MATH-2011",
+      "printed_page": 40,
+      "pdf_page": 45,
+      "reviewer_id": null,
+      "reviewed_at": null,
+      "status": "pending_review"
+    }
+  ],
+  "remaining_reviews": [
+    "Named Mathematics specialist",
+    "Later directives and provincial/pilot year applicability",
+    "Retained formal assessment amendments and rules",
+    "Content rights",
+    "Accessibility and marking-rule validation"
+  ]
+}
