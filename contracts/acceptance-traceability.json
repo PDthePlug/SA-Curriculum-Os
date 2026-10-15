@@ -1,0 +1,96 @@
+{
+  "getPublishedUnit": [
+    "CUR-01",
+    "CNT-02"
+  ],
+  "createAssignment": [
+    "TCH-01",
+    "ADM-02"
+  ],
+  "listTeacherAssignments": [
+    "TCH-01"
+  ],
+  "getOwnAssignment": [
+    "LRN-01",
+    "CNT-03"
+  ],
+  "saveActivityDraft": [
+    "LRN-02",
+    "OFF-02"
+  ],
+  "clearActivityDraft": [
+    "OFF-02",
+    "EVD-02"
+  ],
+  "completeLesson": [
+    "LRN-03",
+    "INT-02"
+  ],
+  "createAttempt": [
+    "ASM-01",
+    "LRN-01"
+  ],
+  "saveAttemptResponse": [
+    "ASM-01",
+    "LRN-02"
+  ],
+  "submitAttempt": [
+    "ASM-01",
+    "OFF-03"
+  ],
+  "getSubmissionEvidence": [
+    "EVD-01",
+    "TCH-01"
+  ],
+  "createMarkingRound": [
+    "ASM-02",
+    "TCH-01"
+  ],
+  "completeMarkingRound": [
+    "ASM-02"
+  ],
+  "recordModeration": [
+    "ASM-03"
+  ],
+  "releaseResult": [
+    "ASM-03",
+    "INT-03"
+  ],
+  "getReleasedResult": [
+    "ASM-03",
+    "EVD-01"
+  ],
+  "acknowledgeFeedback": [
+    "LRN-03"
+  ],
+  "requestCorrection": [
+    "ASM-04"
+  ],
+  "recordIntervention": [
+    "TCH-02"
+  ],
+  "getClassReport": [
+    "INT-01",
+    "INT-02",
+    "RPT-01",
+    "RPT-03"
+  ],
+  "getAssignedPackManifest": [
+    "OFF-01",
+    "CNT-03"
+  ],
+  "recordCurriculumDelivery": [
+    "TCH-01",
+    "RPT-01"
+  ],
+  "getTeacherWorkQueue": [
+    "TCH-01",
+    "RPT-01"
+  ],
+  "updateIntervention": [
+    "TCH-02"
+  ],
+  "decideAcademicReview": [
+    "ASM-04"
+  ]
+}
